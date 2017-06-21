@@ -29,12 +29,12 @@ let send_icon = (res, ext, typefile) => {
 }
 
 app.get('/icon/svg/:file.:extension', (req, res) => {
-    let ext = req.params.extension;
+    let ext = req.params.extension.toLowerCase();
     send_icon(res, ext, 'svg');
 });
 
 app.get('/icon/png/:file.:extension', (req, res) => {
-    let ext = req.params.extension;
+    let ext = req.params.extension.toLowerCase();
     send_icon(res, ext, 'png');
 });
 

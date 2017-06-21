@@ -1,16 +1,8 @@
 var express = require('express');
-var app = express();
-var nconf = require('nconf');
 var mime = require('mime');
 var mapping = require('./mapping.json');
 var fs = require('fs');
-
-nconf.argv()
-    .env()
-    .file({ file: 'config.json' })
-    .defaults({
-        'PORT': 8085
-    });
+var app = express.Router();
 
 app.get("/", (req, res) => res.json({message: "Welcome to our API!"}));
 
@@ -45,6 +37,5 @@ app.get('/icon/png/:file.:extension', (req, res) => {
     send_icon(res, ext, 'png');
 });
 
-app.listen(nconf.get('PORT'), () => {
-    console.info('App listening on http://localhost:' + nconf.get('PORT'));
-})
+module.exports = app;
+

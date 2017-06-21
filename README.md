@@ -16,8 +16,12 @@ URL format :
 http://localhost:8084/icon/png|svg]/[filename]
 ```
 
-Exemple for .zip in CSV type :
+Example : Get CSV icon of myfile.zip :
 ```
-http://localhost:8084/icon/svg/icon.zip
+http://localhost:8084/icon/svg/myfile.zip
 ```
+
+Result :
+
+![zip icon](https://raw.githubusercontent.com/Doelia/icon-extension-api/master/icons/png/027-zip.png)
 

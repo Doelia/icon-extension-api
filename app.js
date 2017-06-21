@@ -15,7 +15,8 @@ let send_icon = (res, ext, typefile) => {
         return;
     }
 
-    let filename = './icons/' + typefile + '/' + iconfile + '.' + typefile;
+    let filename = __dirname + '/icons/' + typefile + '/' + iconfile + '.' + typefile;
+
     try {
         let img = fs.readFileSync(filename);
         let mimetype = mime.lookup(filename);
